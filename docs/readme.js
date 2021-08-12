@@ -17,8 +17,6 @@ _ generate : project.manifest + version.manifest
 _ copy manifest_output/project.manifest -> asset/project.manifest to embed to the build for the first manifest load (later manifest files will be load from 
 search path stored in localStorage).
 
-_ build project again with the project.manifest in asset.
-
 _ check jsb-default/main.js include the embeded code
     _ at the first time all game assets including project.manifest is loaded from internal application folder (read + not write)
     _ after the first hot update success, new search paths for all game assets and manifest will be updated (including new local
@@ -93,6 +91,8 @@ _ check jsb-default/main.js include the embeded code
     }
 
 /*
+
+_ build project again with the project.manifest in asset.
 
 - deploy:
     copy manifest_output/project.manifest + manifest_output/version.manifest jsb-default/assets + jsb-default/src to http://localhost:8080/public_web/hot_update_deploy

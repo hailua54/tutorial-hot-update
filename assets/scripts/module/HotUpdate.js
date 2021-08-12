@@ -334,6 +334,9 @@ cc.Class({
             // This value will be retrieved and appended to the default search path during game startup,
             // please refer to samples/js-tests/main.js for detailed usage.
             // !!! Re-add the search paths in main.js is very important, otherwise, new scripts won't take effect.
+
+            let maxPath = 10;
+            searchPaths = searchPaths.slice(0, maxPath);
             cc.sys.localStorage.setItem('HotUpdateSearchPaths', JSON.stringify(searchPaths));
             jsb.fileUtils.setSearchPaths(searchPaths);
 
