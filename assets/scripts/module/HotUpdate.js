@@ -329,7 +329,7 @@ cc.Class({
             // Prepend the manifest's search path
             var searchPaths = jsb.fileUtils.getSearchPaths();
             var newPaths = this._am.getLocalManifest().getSearchPaths();
-            console.log(JSON.stringify(newPaths));
+            console.log('v3 after assetmanger load new manifest file success and use cache_folder as new path: getLocalManifest newPaths === ' + JSON.stringify(newPaths));
             Array.prototype.unshift.apply(searchPaths, newPaths);
             // This value will be retrieved and appended to the default search path during game startup,
             // please refer to samples/js-tests/main.js for detailed usage.
@@ -371,6 +371,7 @@ cc.Class({
             if (cc.loader.md5Pipe) {
                 url = cc.loader.md5Pipe.transformURL(url);
             }
+            console.log('loadLocalManifest old path ' + url);
             this._am.loadLocalManifest(url);
         }
         if (!this._am.getLocalManifest() || !this._am.getLocalManifest().isLoaded()) {
@@ -393,12 +394,13 @@ cc.Class({
                 if (cc.loader.md5Pipe) {
                     url = cc.loader.md5Pipe.transformURL(url);
                 }
+                console.log('loadLocalManifest old path ' + url);
                 this._am.loadLocalManifest(url);
             }
 
             this._failCount = 0;
             this._am.update();
-            this.panel.updateBtn.active = false;
+            //this.panel.updateBtn.active = false;
             this._updating = true;
         }
     },

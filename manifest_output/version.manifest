@@ -1,0 +1,6 @@
+{
+	"packageUrl": "http://localhost:8080/public_web/hot_update_deploy/",
+	"remoteManifestUrl": "http://localhost:8080/public_web/hot_update_deploy/project.manifest",
+	"remoteVersionUrl": "http://localhost:8080/public_web/hot_update_deploy/version.manifest",
+	"version": "1.0.2"
+}
